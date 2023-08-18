@@ -4,9 +4,9 @@ import {auth} from '../firebase'
 
 const home = () => {
 
-const logout = () => { 
+const logout = async () => { 
 
-signOut(auth);
+await signOut(auth);
 
   console.log('logout');
 

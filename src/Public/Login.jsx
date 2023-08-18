@@ -9,10 +9,12 @@ const handleSubmit = (event) => {
   event.preventDefault();  //bloque le raffraichissement de la page
 
 console.log('event',event.target);
-const {email , password} = event.target;
+const {email , password} = event.target; //récupération des données du formulaire
 console.log('email:',email.value,
             'password:',password.value)
 
+
+//connexion d'un user avec firebase
             signInWithEmailAndPassword(auth , email.value , password.value)
             .then(userCredential => {
 
@@ -30,7 +32,7 @@ console.log("userCredential" , userCredential)
     <div className="hero-content flex-col lg:flex-row-reverse">
       <div className="text-center lg:text-left">
         <h1 className="text-5xl font-bold">Login now!</h1>
-        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <p className="py-6">Bienvenue! Connecte-toi!</p>
       </div>
       <form onSubmit={handleSubmit}>
       <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -45,9 +47,9 @@ console.log("userCredential" , userCredential)
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <input type="text" name='password' placeholder="password" className="input input-bordered" />
+            <input type="password" name='password' placeholder="password" className="input input-bordered" />
             <label className="label">
-              <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+              <a href="/Register" className="label-text-alt link link-hover">Inscription</a>
             </label>
           </div>
           <div className="form-control mt-6">
